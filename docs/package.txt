@@ -1,0 +1,4 @@
+        "angularx-social-login": "^4.1.0",
+        "ngx-online-status": "^2.0.0",
+        "leaflet": "1.6.0",
+        "leaflet-routing-machine": "^3.2.12",

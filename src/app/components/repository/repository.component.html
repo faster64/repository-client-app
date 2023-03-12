@@ -1,0 +1,16 @@
+<div class="repository">
+  <div class="repository-header">
+
+  </div>
+  <div class="folders">
+    <div class="folder" *ngFor="let folder of folders">
+      <div class="icon">
+        <img src="../../../assets/img/folder.png">
+      </div>
+      <div class="text">{{folder.folderName}}</div>
+    </div>
+  </div>
+
+
+  <text-loading *ngIf="isLoading"></text-loading>
+</div>

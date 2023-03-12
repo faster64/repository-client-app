@@ -1,0 +1,43 @@
+@import url(../../../../../assets/css/var-cls.css);
+.common-loading {
+    position: absolute;
+    inset: 0;
+    background-color: rgba($color: #000000, $alpha: 0.2);
+    z-index: 999;
+    .inner-loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        min-width: 96px;
+        min-height: 48px;
+        border-radius: 4px;
+        background-color: #fff;
+        overflow: hidden;
+    }
+    .loading-animation {
+        width: 48px;
+        height: 48px;
+        background-image: url(../../../../../assets/img/loading.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        animation: clockwiseSpin 0.5s infinite linear;
+    }
+    .loading-text {
+        flex-basis: 100%;
+        padding: 4px;
+        margin-top: 8px;
+        text-align: center;
+        font-weight: 550;
+    }
+}
+
+@keyframes clockwiseSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

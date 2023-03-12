@@ -1,0 +1,28 @@
+<div class="aws-uploader">
+
+    <div class="uploader">
+        <ngx-dropzone #dropzone (change)="onSelect($event)" [multiple]="multiple" [accept]="allowedFileExtensions" [expandable]="false" [disabled]="disabled">
+            <ngx-dropzone-label>
+                <div>Kéo và thả ảnh vào đây</div>
+                <div>Hoặc ấn vào để chọn ảnh</div>
+            </ngx-dropzone-label>
+
+            <ng-container *ngFor="let f of files">
+                <ngx-dropzone-image-preview *ngIf="f.type.startsWith('image')" [file]="f" [removable]="true" (removed)="onRemove(f)">
+                    <!-- <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label> -->
+                </ngx-dropzone-image-preview>
+
+                <ngx-dropzone-video-preview *ngIf="f.type.startsWith('video')" [file]="f" [removable]="true" (removed)="onRemove(f)"></ngx-dropzone-video-preview>
+            </ng-container>
+
+        </ngx-dropzone>
+    </div>
+
+    <div class="upload-btn" *ngIf="showUploadButton && !emitAutomatically">
+        <aws-button #uploadBtn text="Tải lên" (onClick)="upload()" [disabled]="files.length === 0"></aws-button>
+    </div>
+
+    <div class="upload-btn" *ngIf="showUploadButton && emitAutomatically">
+        <aws-button #uploadBtn text="Tải lên" (onClick)="upload()" [disabled]="true"></aws-button>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<div id="app" #app>
+    <mat-progress-bar mode="determinate" [value]="progressValue" *ngIf="inProgress"></mat-progress-bar>
+
+    <aws-header #header></aws-header>
+    <div class="app-content" #appContent>
+        <router-outlet></router-outlet>
+    </div>
+    <h1 style="visibility: hidden;">Google</h1>
+</div>
+
+<snackbar></snackbar>
+<message-box></message-box>
